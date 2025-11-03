@@ -8,8 +8,6 @@ Sigue estos pasos para armar el circuito de la **Práctica #2 – Secuencia de L
 <img width="688" height="392" alt="image" src="https://github.com/user-attachments/assets/7f15922a-28d7-4da5-a466-ab794f092101" />
 
 
-> 💬 Asegúrate de subir la imagen del diagrama con el nombre **diagrama.png** en la misma carpeta para que se muestre correctamente.
-
 ---
 
 ## 🧰 Conexiones básicas  
