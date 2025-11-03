@@ -57,3 +57,14 @@ Conecta los pines de la LCD al Arduino según la siguiente tabla:
 ## ✅ Verificación  
 1. Carga el programa en la placa Arduino.  
 2. Asegúrate de que la pantalla LCD muestre el texto:  
+Preguntame
+Bola de Cristal
+
+3. Al mover la placa (sensor de inclinación), la pantalla mostrará una respuesta aleatoria.  
+
+---
+
+## 🔎 Resultado Esperado  
+La **pantalla LCD** mostrará una respuesta diferente cada vez que el sensor detecte movimiento.  
+Así, la “bola de cristal” contestará preguntas al azar con mensajes como:  
+> “Sí”, “Es probable”, “Pregunta de nuevo”, “No es seguro”, etc.
