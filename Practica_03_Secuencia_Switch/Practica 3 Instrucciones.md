@@ -84,49 +84,79 @@ El delay de 100 ms controla la velocidad de la animación.
 
 Versión con mejor organización y comentarios:
 
-🧮 Código Mejorado (opcional)
-
-Versión con mejor organización y comentarios:
-
 /* -----------------------------------------------------------
    PRACTICA #3 – Secuencia de LEDs con Switch
    Alumno: Bernon Romero
    Placa: Arduino UNO
    Librerías: Ninguna
+   Descripción:
+   Esta práctica controla una secuencia de 10 LEDs utilizando
+   un switch (pulsador). Cuando el pulsador se presiona, los
+   LEDs se encienden uno a uno de izquierda a derecha y luego
+   regresan en sentido contrario.
 ----------------------------------------------------------- */
 
-int tiempo = 100;
-const int pulsador = 12;
-int estado = 0;
+// ------------------------------
+// 🔧 Declaración de variables
+// ------------------------------
+int tiempo = 100;        // Tiempo de retardo entre LEDs (en milisegundos)
+const int pulsador = 12; // Pin digital conectado al switch
+int estado = 0;          // Variable para almacenar el estado del switch
 
+// ------------------------------
+// ⚙️ Configuración inicial
+// ------------------------------
 void setup() {
-  pinMode(pulsador, INPUT);
+  pinMode(pulsador, INPUT); // Configura el pin 12 como entrada (para el switch)
+
+  // Configura los pines digitales 1 al 10 como salidas
   for (int n = 1; n <= 10; n++) {
     pinMode(n, OUTPUT);
   }
 }
 
+// ------------------------------
+// 💡 Función: secuencia()
+// Enciende los LEDs uno por uno hacia adelante
+// y luego en sentido inverso.
+// ------------------------------
 void secuencia() {
+
+  // Encendido de izquierda a derecha
   for (int n = 1; n <= 10; n++) {
-    digitalWrite(n, HIGH);
-    delay(tiempo);
-    digitalWrite(n, LOW);
-    delay(tiempo);
+    digitalWrite(n, HIGH); // Enciende el LED actual
+    delay(tiempo);         // Espera el tiempo definido
+    digitalWrite(n, LOW);  // Apaga el LED actual
+    delay(tiempo);         // Espera antes del siguiente LED
   }
+
+  // Encendido de derecha a izquierda
   for (int n = 10; n >= 1; n--) {
-    digitalWrite(n, HIGH);
+    digitalWrite(n, HIGH); // Enciende el LED actual
     delay(tiempo);
-    digitalWrite(n, LOW);
+    digitalWrite(n, LOW);  // Apaga el LED
     delay(tiempo);
   }
 }
 
+// ------------------------------
+// 🔁 Bucle principal
+// Lee el estado del switch y ejecuta la secuencia
+// solo si está presionado.
+// ------------------------------
 void loop() {
+
+  // Lee el valor del pulsador (HIGH si está presionado)
   estado = digitalRead(pulsador);
+
+  // Si el pulsador se presiona, ejecuta la secuencia de LEDs
   if (estado == HIGH) {
     secuencia();
   }
+
+  // Si el switch no está presionado, no hace nada (LEDs apagados)
 }
+
 
 🔎 Resultado Esperado
 
