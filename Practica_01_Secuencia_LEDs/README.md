@@ -87,6 +87,8 @@ void loop() {
   digitalWrite(8, LOW);
   delay(200);
 }
+
+
 ⚡ Código versión mejorada (efecto ida y vuelta)
 /* -----------------------------------------------------------
    PRACTICA #1 – Secuencia de LEDs (Versión mejorada)
