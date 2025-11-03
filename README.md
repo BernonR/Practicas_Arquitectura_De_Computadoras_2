@@ -1,5 +1,4 @@
-# 🧠 Repositorio de Prácticas de Laboratorio – Electrónica y Microcontroladores
-
+# 🧠 Repositorio de Prácticas de Laboratorio – Aquitectura de Computadoras II
 Este repositorio reúne una colección de **prácticas de laboratorio orientadas al aprendizaje de programación, electrónica y microcontroladores**, con el objetivo de ofrecer a los estudiantes un entorno **modernizado, accesible y documentado** para la implementación y comprensión de cada ejercicio.
 
 La finalidad es sustituir los materiales tradicionales en PDF por una versión **digital estructurada y actualizada**, que facilite la implementación, evaluación y reutilización de las prácticas en entornos educativos y virtuales.
