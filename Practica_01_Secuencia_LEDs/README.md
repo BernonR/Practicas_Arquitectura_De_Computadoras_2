@@ -43,5 +43,82 @@ Detiene temporalmente la ejecución del programa por el número de **milisegundo
 
 ---
 
-📘 **Resultado esperado:**  
-Los LEDs se encenderán y apagarán uno a uno en una secuencia repetitiva, demostrando el funcionamiento básico de las **salidas digitales** y el control de **tiempo en Arduino**.
+## 💻 Código original (comentado)
+
+```cpp
+/* -----------------------------------------------------------
+   PRACTICA #1 – Secuencia de LEDs
+   Alumno: Bernon Romero
+   Placa: Arduino UNO
+   Pines utilizados: 5, 6, 7, 8
+   Librerías necesarias: (Ninguna)
+----------------------------------------------------------- */
+
+void setup() {
+  // Configuración de los pines como salidas digitales
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+}
+
+void loop() {
+  // LED en pin 5
+  digitalWrite(5, HIGH);   // Enciende LED 1
+  delay(200);              // Espera 200 ms
+  digitalWrite(5, LOW);    // Apaga LED 1
+  delay(200);              // Pausa antes del siguiente LED
+
+  // LED en pin 6
+  digitalWrite(6, HIGH);
+  delay(200);
+  digitalWrite(6, LOW);
+  delay(200);
+
+  // LED en pin 7
+  digitalWrite(7, HIGH);
+  delay(200);
+  digitalWrite(7, LOW);
+  delay(200);
+
+  // LED en pin 8
+  digitalWrite(8, HIGH);
+  delay(200);
+  digitalWrite(8, LOW);
+  delay(200);
+}
+⚡ Código versión mejorada (efecto ida y vuelta)
+/* -----------------------------------------------------------
+   PRACTICA #1 – Secuencia de LEDs (Versión mejorada)
+   Alumno: Bernon Romero
+   Placa: Arduino UNO
+   Pines utilizados: 5, 6, 7, 8
+   Librerías necesarias: (Ninguna)
+----------------------------------------------------------- */
+
+int leds[] = {5, 6, 7, 8};  // Arreglo de pines conectados a LEDs
+int total = 4;              // Número de LEDs
+int tiempo = 200;           // Tiempo entre cada cambio (ms)
+
+void setup() {
+  // Configura todos los pines como salida
+  for (int i = 0; i < total; i++) {
+    pinMode(leds[i], OUTPUT);
+  }
+}
+
+void loop() {
+  // Secuencia izquierda → derecha
+  for (int i = 0; i < total; i++) {
+    digitalWrite(leds[i], HIGH);
+    delay(tiempo);
+    digitalWrite(leds[i], LOW);
+  }
+
+  // Secuencia derecha → izquierda
+  for (int i = total - 2; i > 0; i--) {
+    digitalWrite(leds[i], HIGH);
+    delay(tiempo);
+    digitalWrite(leds[i], LOW);
+  }
+}
