@@ -69,9 +69,7 @@ void loop() {
     secuencia();
   }
 }
-
 💡 Explicación del código
-
 Se define una variable pulsador en el pin 12.
 
 Cuando el switch se presiona (estado == HIGH), se ejecuta la función secuencia().
@@ -80,10 +78,9 @@ Los LEDs se encienden uno por uno hacia adelante y luego hacia atrás.
 
 El delay de 100 ms controla la velocidad de la animación.
 
-🧮 Código Mejorado (opcional)
-
-Versión con mejor organización y comentarios:
-
+🧮 Código Mejorado (con comentarios)
+cpp
+Copy code
 /* -----------------------------------------------------------
    PRACTICA #3 – Secuencia de LEDs con Switch
    Alumno: Bernon Romero
@@ -156,9 +153,6 @@ void loop() {
 
   // Si el switch no está presionado, no hace nada (LEDs apagados)
 }
-
-
 🔎 Resultado Esperado
-
 Al presionar el switch, los LEDs realizarán una animación de encendido secuencial hacia adelante y luego hacia atrás.
 Cuando el switch no está presionado, todos los LEDs permanecerán apagados.
